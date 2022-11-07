@@ -7,7 +7,7 @@ function PlantFormContainer({
         const plant={
             name:formData.get('name')
         }
-        onSend(plant)
+        onSend(plant) 
     }
 
     return (
