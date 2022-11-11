@@ -1,26 +1,26 @@
-function PlantFormContainer({
-    onSend
-}) {
-    const onSubmit = (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.currentTarget);
-        const plant={
-            name:formData.get('name')
-        }
-        onSend(plant) 
-    }
+import usePlants from "../hooks/usePlants";
 
-    return (
-        <form onSubmit={onSubmit}>
-            <input name="name"></input>
-            <button>Zapisz</button>
-        </form>
-    )
+function PlantFormContainer() {
+  const { onSend } = usePlants();
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const plant = {
+      name: formData.get("name"),
+    };
+    onSend(plant);
+  };
+
+  return (
+    <form onSubmit={onSubmit}>
+      <input name="name"></input>
+      <button>Zapisz</button>
+    </form>
+  );
 }
 
-export default PlantFormContainer
-
-
+export default PlantFormContainer;
 
 // name: "Filodendron Pink Princess",
 //         dateOfPurchase: "10.10.2021",

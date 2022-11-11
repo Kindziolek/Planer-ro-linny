@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "Filodendron Pink Princess",
         "dateOfPurchase": "10.10.2021",
         "placeOfPurchase": "Allegro",
@@ -24,6 +25,7 @@
         "observations": "Preferuje luźne, dobrze przepuszczalne podłoże."
     },
     {
+        "id": 2,
         "name": "Filodendron Pink Princess",
         "dateOfPurchase": "10.10.2021",
         "placeOfPurchase": "Allegro",
@@ -48,6 +50,7 @@
         "observations": "Preferuje luźne, dobrze przepuszczalne podłoże."
     },
     {
+        "id": 3,
         "name": "Filodendron Pink Princess",
         "dateOfPurchase": "10.10.2021",
         "placeOfPurchase": "Allegro",
