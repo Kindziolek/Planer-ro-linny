@@ -1,13 +1,14 @@
-import styles from "./App.module.css";
-import PlantListContainer from "./containers/PlantListContainer";
-import PlantFormContainer from "./containers/PlantFormContainer";
+import styles from './App.module.css';
+import PlantListContainer from './containers/PlantListContainer';
+import PlantFormContainer from './containers/PlantFormContainer';
+import { PlantsProvider } from './providers/Plants';
 
 function App() {
   return (
-    <div>
+    <PlantsProvider>
       <PlantListContainer />
       <PlantFormContainer />
-    </div>
+    </PlantsProvider>
   );
 }
 

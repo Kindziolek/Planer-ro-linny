@@ -1,22 +1,15 @@
-import { useCallback } from "react";
-import PlantListItem from "../components/PlantListItem";
-import usePlants from "../hooks/usePlants";
-import styles from "./PlantListContainer.module.css";
+import { useCallback } from 'react';
+import PlantListItem from '../components/PlantListItem';
+import usePlants from '../providers/Plants';
+import styles from './PlantListContainer.module.css';
 
 function PlantListContainer() {
-  const { plants, onDrop } = usePlants();
-
-  const onEdit = useCallback((id) => {}, [plants]);
+  const { plants, onDrop, onEdit } = usePlants();
 
   const listItems = plants.map(({ name, id }) => {
     return (
       <li key={id}>
-        <PlantListItem
-          id={id}
-          name={name}
-          onEdit={onEdit}
-          onDrop={onDrop}
-        ></PlantListItem>
+        <PlantListItem id={id} name={name} onEdit={onEdit} onDrop={onDrop} />
       </li>
     );
   });
