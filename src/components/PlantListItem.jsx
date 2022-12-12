@@ -1,19 +1,13 @@
-import { useCallback } from "react";
+import { useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
-function PlantListItem({ id, name, onDrop, onEdit }) {
-  const edit = useCallback(() => {
-    onEdit(id);
-  }, [id]);
-  const drop = useCallback(() => {
-    onDrop(id);
-  }, [id]);
-
+function PlantListItem({ id, name }) {
   return (
     <div>
       {name}
       <div>
-        <span onClick={edit}>edycja</span>
-        <span onClick={drop}>usun</span>
+        <Link to={`/edit/${id}`}>edycja</Link>
+        <Link to={`/del/${id}`}>usun</Link>
       </div>
     </div>
   );

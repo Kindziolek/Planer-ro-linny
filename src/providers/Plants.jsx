@@ -18,30 +18,33 @@ export default function usePlants() {
 const PlantsProvider = ({ children }) => {
   const [plants, setPlants] = useState(data);
 
-  const onSend = useCallback((plant) => {
-    setPlants((value) => [
-      ...value,
-      {
-        ...plant,
-        id: new Date().getTime(),
-      },
-    ]);
+  const onUpsert = useCallback((form) => {
+    if (form.id) {
+      setPlants((value) =>
+        value.map((plant) => {
+          return plant.id === form.id ? form : plant;
+        })
+      );
+    } else {
+      setPlants((value) => [
+        ...value,
+        {
+          ...form,
+          id: new Date().getTime(),
+        },
+      ]);
+    }
   }, []);
 
   const onDrop = useCallback((id) => {
     setPlants((value) => value.filter((element) => element.id !== id));
   }, []);
 
-  const onEdit = useCallback((id) => {
-    setPlants((value) => value.filter((element) => element.id !== id));
-  }, []);
-
   const value = useMemo(
     () => ({
       plants,
-      onSend,
+      onUpsert,
       onDrop,
-      onEdit,
     }),
     [plants]
   );
