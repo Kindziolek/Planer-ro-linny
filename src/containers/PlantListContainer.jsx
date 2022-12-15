@@ -6,10 +6,10 @@ import styles from './PlantListContainer.module.scss';
 function PlantListContainer() {
   const { plants } = usePlants();
 
-  const listItems = plants.map(({ name, id }) => {
+  const listItems = plants.map(({ name, id, photo }) => {
     return (
       <li className={styles.plant} key={id}>
-        <PlantListItem id={id} name={name} />
+        <PlantListItem id={id} name={name} photo={photo} />
       </li>
     );
   });
