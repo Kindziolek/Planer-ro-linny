@@ -1,22 +1,38 @@
 body {
-  background-color: #FFFCF1;
-  color: #3A3B37;
-  font-family: 'Quicksand', sans-serif; 
+  background-color: #fffcf1;
+  color: #3a3b37;
+  font-family: 'Quicksand', sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: #3A3B37;
+  color: #3a3b37;
 }
 
-a:hover{
-  color: #3A3B37;
+a:hover {
+  color: #3a3b37;
 }
 
-a:visited{
-  color: #3A3B37;
+a:visited {
+  color: #3a3b37;
 }
 
-a:active{
+a:active {
   color: brown;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+  font-size: 20px;
+  color: #3a3b37;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #486444;
+  border-radius: 15px;
+  background-color: #24583f32;
+  width: 100%;
 }

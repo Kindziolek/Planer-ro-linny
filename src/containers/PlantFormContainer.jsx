@@ -236,8 +236,8 @@ function PlantFormContainer() {
         onChange={onUpdate}
       />
 
-      <button>Zapisz</button>
-      <Link to="/">Powrót do listy roślin</Link>
+      <button className={styles.button}>Zapisz</button>
+      <Link className={styles.back} to="/">Powrót do listy roślin</Link>
     </form>
   );
 }

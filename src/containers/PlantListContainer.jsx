@@ -18,7 +18,7 @@ function PlantListContainer() {
     <div className={styles.plant_container}>
       <h2 className={styles.header}>Moje rośliny</h2>
       <ul className={styles.plant_list}>{listItems}</ul>
-      <Link to="/add">Dodaj nową roślinę</Link>
+      <Link className={styles.add} to="/add">Dodaj nową roślinę</Link>
     </div>
   );
 }
