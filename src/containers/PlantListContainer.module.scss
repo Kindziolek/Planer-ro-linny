@@ -1,9 +1,27 @@
-.header {
-  text-align: center;
-  font-weight: 600;
-  font-size: 50px;
-}
-
 .plant_container {
   font-size: 20px;
+
+}
+
+.header {
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.plant {
+  margin: 15px;
+  font-size: 20px;
+  text-align: center;
+  flex: 0 0 calc(100%/3);
+}
+
+.plant_list {
+  display: flex;
+  justify-content: space-around;
+  // max-width: 80%;
+
+  flex-wrap: wrap
 }

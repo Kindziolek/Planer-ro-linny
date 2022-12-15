@@ -8,7 +8,7 @@ function PlantListContainer() {
 
   const listItems = plants.map(({ name, id }) => {
     return (
-      <li key={id}>
+      <li className={styles.plant} key={id}>
         <PlantListItem id={id} name={name} />
       </li>
     );

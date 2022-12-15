@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useCallback, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import usePlants from '../providers/Plants';
+import styles from './PlantFormContainer.module.scss';
 
 const emptyForm = {
   name: '',
@@ -86,32 +87,39 @@ function PlantFormContainer() {
   }, []);
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className={styles.form} onSubmit={onSubmit}>
+      <label>Nazwa rośliny</label>
       <input name="name" value={form.name} onChange={onUpdate} />
+      <label>Data zakupu</label>
       <input
         name="dateOfPurchase"
         type="date"
         value={form.dateOfPurchase}
         onChange={onUpdate}
       />
+      <label>Miejsce zakupu</label>
       <input
         name="placeOfPurchase"
         value={form.placeOfPurchase}
         onChange={onUpdate}
       />
+      <label>Cena</label>
       <input
         name="price"
         type="number"
         value={form.price}
         onChange={onUpdate}
       />
+      <label>Bezpieczne dla zwierząt</label>
       <input
         name="safeOfAnimals"
         type="checkbox"
         value={form.safeOfAnimals}
         onChange={onUpdate}
       />
+      <label>Notatki</label>
       <textarea name="notes" value={form.notes} onChange={onUpdate} />
+      <label>Zdjęcie</label>
       <input
         name="photo_uri"
         type="file"
@@ -119,25 +127,30 @@ function PlantFormContainer() {
         onChange={onUpdate}
         ref={fileRef}
       />
+      <label>Podłoże</label>
       <input name="substrate" value={form.substrate} onChange={onUpdate} />
+      <label>Rozmiar doniczki</label>
       <input
         name="sizePot"
         type="number"
         value={form.sizePot}
         onChange={onUpdate}
       />
+      <label>Wielkość rośliny</label>
       <input
         name="sizePlant"
         type="number"
         value={form.sizePlant}
         onChange={onUpdate}
       />
+      <label>Data nowego liścia</label>
       <input
         name="newLeafDate"
         type="date"
         value={form.newLeafDate}
         onChange={onUpdate}
       />
+      <label>Nasłonecznienie</label>
       <select name="place" value={form.place} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">
           <option value="1">Bezpośrednie słońce</option>
@@ -145,18 +158,21 @@ function PlantFormContainer() {
           <option value="3">Cieniste lub półcieniste</option>
         </optgroup>
       </select>
+      <label>Temperatura</label>
       <input
         name="temperature"
         type="number"
         value={form.temperature}
         onChange={onUpdate}
       />
+      <label>Wilgotność potwietrza</label>
       <input
         name="airHumidity"
         type="number"
         value={form.airHumidity}
         onChange={onUpdate}
       />
+      <label>Częstotliwość podlewania</label>
       <select name="watering" value={form.watering} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">
           <option value="1">
@@ -165,9 +181,9 @@ function PlantFormContainer() {
           <option value="2">
             Utrzymywanie stale wilgotnego podłoża (higromentr między 4 a 6)
           </option>
-          <option value="3">Dolewanie wody do podstawki</option>
         </optgroup>
       </select>
+      <label>Sposób podlewania</label>
       <select
         name="wateringMetod"
         value={form.wateringMetod}
@@ -179,6 +195,7 @@ function PlantFormContainer() {
           <option value="3">Dolewanie wody do podstawki</option>
         </optgroup>
       </select>
+      <label>pH podłoża</label>
       <select name="phSubstrate" value={form.phSubstrate} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">
           <option value="1">Bardzo kwaśny (poniżej 4,5)</option>
@@ -189,24 +206,36 @@ function PlantFormContainer() {
           <option value="6">Nie wiem (do sprawdzenia)</option>
         </optgroup>
       </select>
-      <input name="lighting" value={form.lighting} onChange={onUpdate} />
+      <label>Doświetlanie</label>
+      <input
+        name="lighting"
+        placeholder="Jeśli doświetlasz, możesz podać np. godziny, w których doświetlasz"
+        value={form.lighting}
+        onChange={onUpdate}
+      />
+      <label>Sposób rozmnażania</label>
       <input
         name="reproduction"
         value={form.reproduction}
         onChange={onUpdate}
       />
+      <label>Nawóz</label>
       <input name="fretilizer" value={form.fretilizer} onChange={onUpdate} />
+      <label>Data ostatniego nawożenia</label>
       <input
         name="fretilizerDate"
         type="date"
         value={form.fretilizerDate}
         onChange={onUpdate}
       />
-      <input
+      <label>Moje obserwacje</label>
+      <textarea
         name="observations"
+        placeholder="Możesz w tym miejscu zapisać to, co udało Ci się zaobserwować. Na przykład to, co lubi roślina, a co jej szkodzi."
         value={form.observations}
         onChange={onUpdate}
       />
+
       <button>Zapisz</button>
       <Link to="/">Powrót do listy roślin</Link>
     </form>
