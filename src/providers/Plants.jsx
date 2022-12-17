@@ -64,7 +64,6 @@ const PlantsProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    console.log(plants);
     setLocalStorage(localStorageKey, plants);
   }, [plants]);
 
