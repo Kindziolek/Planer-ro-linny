@@ -29,94 +29,111 @@ export default function PlantDeleteContainer() {
     fretlizner,
     fretliznerDate,
     obserwations,
-    
   } = plants.find((plant) => plant.id === Number(id)) || emptyForm;
   return (
-    <div>
-      <h2>{name}</h2>
-      <div>
-        <p>Data zakupu:</p>
-        {dateOfPurchase}
+    <div className={styles.detalis}>
+      <h2 className={styles.detalis_header}>{name}</h2>
+      <div className={styles.box}>
+      <div className={styles.container}>
+        {' '}
+        <h3 className={styles.container_header}>Zakup</h3>
+        <div>
+          <p className={styles.list}>Data</p>
+          <p className={styles.plant}>{dateOfPurchase}</p>
+        </div>
+        <div>
+          <p className={styles.list}>Miejsce</p>
+          <p className={styles.plant}>{placeOfPurchase}</p>
+        </div>
+        <div>
+          <p className={styles.list}>Cena</p>
+          <p className={styles.plant}>{price}</p>
+        </div>
+      </div>
+      <div className={styles.notes}>
+        <p className={styles.list}>Notatki</p>
+        <p className={styles.plant}>{notes}</p>
+      </div>
       </div>
       <div>
-        <p>Miejsce zakupu:</p>
-        {placeOfPurchase}
+        <p className={styles.list}>Bezpieczne dla zwierząt</p>
+        <p className={styles.plant}>{safeOfAnimals}</p>
+      </div>
+
+      <div>
+        <p className={styles.list}>Zdjęcie</p>
+        <p className={styles.plant}>{photo}</p>
+      </div>
+      <div className={styles.container}>
+        <h3 className={styles.container_header}>Aktualnie</h3>
+        <div>
+        <p className={styles.list}>Podłoże</p>
+        <p className={styles.plant}>{substrate}</p>
+      </div>
+        <div>
+          <p className={styles.list}>Rozmiar doniczki</p>
+          <p className={styles.plant}>{sizePot}</p>
+        </div>
+        <div>
+          <p className={styles.list}>Rozmiar rośliny</p>
+          <p className={styles.plant}>{sizePlant}</p>
+        </div>
       </div>
       <div>
-        <p>Cena:</p>
-        {price}
+        <p className={styles.list}>Data nowego liścia</p>
+        <p className={styles.plant}>{newLeafDate}</p>
       </div>
       <div>
-        <p>Bezpieczne dla zwierząt:</p>
-        {safeOfAnimals}
+        <p className={styles.list}>Metoda rozmnażania</p>
+        <p className={styles.plant}>{reproduction}</p>
+      </div>
+      <div className={styles.box}>
+      <div className={styles.container}>
+        <h3 className={styles.container_header}>Dobrze się czuje, jeśli mam</h3>
+        <div>
+          <p className={styles.list}>Temperatura</p>
+          <p className={styles.plant}>{temperature}</p>
+        </div>
+        <div>
+          <p className={styles.list}>Nasłonecznienie</p>
+          <p className={styles.plant}>{place}</p>
+        </div>
+        <div>
+          <p className={styles.list}>Wilgotność powietrza</p>
+          <p className={styles.plant}>{airHumidity}</p>
+        </div>
+        <div>
+          <p className={styles.list}>pH podłoża</p>
+          <p className={styles.plant}>{phSubstrate}</p>
+        </div>
+        </div>
+      </div>
+
+      <div>
+        <p className={styles.list}>Metoda podlewania</p>
+        <p className={styles.plant}>{wateringMetod}</p>
       </div>
       <div>
-        <p>Notatki:</p>
-        {notes}
+        <p className={styles.list}>Częstotliwość podelwania</p>
+        <p className={styles.plant}>{watering}</p>
+      </div>
+
+      <div>
+        <p className={styles.list}>Doświetlanie</p>
+        <p className={styles.plant}>{lighting}</p>
+      </div>
+
+      <div>
+        <p className={styles.list}>Nawóz</p>
+        <p className={styles.plant}>{fretlizner}</p>
       </div>
       <div>
-        <p>Zdjęcie:</p>
-        {photo}
+        <p className={styles.list}>Data ostatniego nawożenia</p>
+        <p className={styles.plant}>{fretliznerDate}</p>
       </div>
       <div>
-        <p>Podłoże:</p>
-        {substrate}
-      </div>
-            <div>
-        <p>Rozmiar doniczki:</p>
-        {sizePot}
-      </div>
-      <div>
-        <p>Rozmiar rośliny:</p>
-        {sizePlant}
-      </div>
-      <div>
-        <p>Data nowego liścia:</p>
-        {newLeafDate}
-      </div>
-      <div>
-        <p>Temperatura:</p>
-        {temperature}
-      </div>
-      <div>
-        <p>Nasłonecznienie</p>
-        {place}
-      </div>
-      <div>
-        <p>Częstotliwość podelwania:</p>
-        {watering}
-      </div>
-      <div>
-        <p>Wilgotność powietrza:</p>
-        {airHumidity}
-      </div>
-      <div>
-        <p>Metoda podlewania:</p>
-        {wateringMetod}
-      </div>
-      <div>
-        <p>pH podłoża:</p>
-        {phSubstrate}
-      </div>
-      <div>
-        <p>Doświetlanie:</p>
-        {lighting}
-      </div>
-      <div>
-        <p>Metoda rozmnażania:</p>
-        {reproduction}
-      </div>
-      <div>
-        <p>Nawóz:</p>
-        {fretlizner}
-      </div>
-      <div>
-        <p>Data ostatniego nawożenia:</p>
-        {fretliznerDate}
-      </div>
-      <div>
-        <p>Obserwacje:</p>
-        {obserwations}
+        <p className={styles.list}>Obserwacje</p>
+        <p className={styles.plant}>{obserwations}</p>
       </div>
     </div>
   );
