@@ -37,15 +37,15 @@ export default function PlantDeleteContainer() {
       <div className={styles.container}>
         {' '}
         <h3 className={styles.container_header}>Zakup</h3>
-        <div>
+        <div className={styles.row}>
           <p className={styles.list}>Data</p>
           <p className={styles.plant}>{dateOfPurchase}</p>
         </div>
-        <div>
+        <div className={styles.row}>
           <p className={styles.list}>Miejsce</p>
           <p className={styles.plant}>{placeOfPurchase}</p>
         </div>
-        <div>
+        <div className={styles.row}>
           <p className={styles.list}>Cena</p>
           <p className={styles.plant}>{price}</p>
         </div>
@@ -55,15 +55,11 @@ export default function PlantDeleteContainer() {
         <p className={styles.plant}>{notes}</p>
       </div>
       </div>
-      <div>
-        <p className={styles.list}>Bezpieczne dla zwierząt</p>
-        <p className={styles.plant}>{safeOfAnimals}</p>
-      </div>
-
-      <div>
+      {/* <div>
         <p className={styles.list}>Zdjęcie</p>
         <p className={styles.plant}>{photo}</p>
-      </div>
+      </div> */}
+      <div className={styles.box_left}>
       <div className={styles.container}>
         <h3 className={styles.container_header}>Aktualnie</h3>
         <div>
@@ -79,6 +75,7 @@ export default function PlantDeleteContainer() {
           <p className={styles.plant}>{sizePlant}</p>
         </div>
       </div>
+      <div className={styles.container_left}>
       <div>
         <p className={styles.list}>Data nowego liścia</p>
         <p className={styles.plant}>{newLeafDate}</p>
@@ -87,9 +84,15 @@ export default function PlantDeleteContainer() {
         <p className={styles.list}>Metoda rozmnażania</p>
         <p className={styles.plant}>{reproduction}</p>
       </div>
+      <div>
+        <p className={styles.list}>Bezpieczne dla zwierząt:</p>
+        <p className={styles.plant}>{safeOfAnimals}</p>
+      </div>
+      </div>
+      </div>
       <div className={styles.box}>
       <div className={styles.container}>
-        <h3 className={styles.container_header}>Dobrze się czuje, jeśli mam</h3>
+        <h3 className={styles.container_header}>Dobrze się czuje, jeśli mam:</h3>
         <div>
           <p className={styles.list}>Temperatura</p>
           <p className={styles.plant}>{temperature}</p>
@@ -107,8 +110,8 @@ export default function PlantDeleteContainer() {
           <p className={styles.plant}>{phSubstrate}</p>
         </div>
         </div>
-      </div>
-
+      
+    <div className={styles.a}>
       <div>
         <p className={styles.list}>Metoda podlewania</p>
         <p className={styles.plant}>{wateringMetod}</p>
@@ -131,9 +134,13 @@ export default function PlantDeleteContainer() {
         <p className={styles.list}>Data ostatniego nawożenia</p>
         <p className={styles.plant}>{fretliznerDate}</p>
       </div>
+      </div>
+      </div>
       <div>
+      <div className={styles.notes}>
         <p className={styles.list}>Obserwacje</p>
         <p className={styles.plant}>{obserwations}</p>
+      </div>
       </div>
     </div>
   );
