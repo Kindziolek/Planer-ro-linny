@@ -2,7 +2,12 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import { useCallback, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import usePlants, { phSubstrates, places, wateringMetods, waterings} from '../providers/Plants';
+import usePlants, {
+  phSubstrates,
+  places,
+  wateringMetods,
+  waterings,
+} from '../providers/Plants';
 import styles from './PlantFormContainer.module.scss';
 
 const emptyForm = {
@@ -49,24 +54,12 @@ function PlantFormContainer() {
     plants.find((plant) => plant.id === Number(id)) || emptyForm
   );
 
-  useEffect(() => {
-    if (form.photo) {
-      let list = new DataTransfer();
-
-      const file = new File([new Blob([form.photo])], 'output_file_name');
-
-      list.items.add(file);
-
-      fileRef.current.files = list.files;
-    }
-  }, [form.photo]);
-
   const onSubmit = useCallback(
     async (event) => {
       event.preventDefault();
 
       const file = fileRef.current.files[0];
-      const base64 = file ? await getBase64(file) : '';
+      const base64 = file ? await getBase64(file) : form.photo ?? '';
 
       onUpsert({
         ...form,
@@ -114,12 +107,14 @@ function PlantFormContainer() {
       <input
         name="safeOfAnimals"
         type="checkbox"
-        value={form.safeOfAnimals}
+        value={true}
         onChange={onUpdate}
+        checked={form.safeOfAnimals}
       />
       <label>Notatki</label>
       <textarea name="notes" value={form.notes} onChange={onUpdate} />
       <label>Zdjęcie</label>
+      {form.photo && <img src={form.photo} width="100" />}
       <input
         name="photo_uri"
         type="file"
@@ -153,7 +148,7 @@ function PlantFormContainer() {
       <label>Nasłonecznienie</label>
       <select name="place" value={form.place} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">
-        {places.map((value, key) => (
+          {places.map((value, key) => (
             <option value={key}>{value}</option>
           ))}
         </optgroup>
@@ -175,10 +170,9 @@ function PlantFormContainer() {
       <label>Częstotliwość podlewania</label>
       <select name="watering" value={form.watering} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">
-        {waterings.map((value, key) => (
+          {waterings.map((value, key) => (
             <option value={key}>{value}</option>
           ))}
-
         </optgroup>
       </select>
       <label>Sposób podlewania</label>
@@ -188,7 +182,7 @@ function PlantFormContainer() {
         onChange={onUpdate}
       >
         <optgroup label="Opcje wyboru">
-        {wateringMetods.map((value, key) => (
+          {wateringMetods.map((value, key) => (
             <option value={key}>{value}</option>
           ))}
         </optgroup>
