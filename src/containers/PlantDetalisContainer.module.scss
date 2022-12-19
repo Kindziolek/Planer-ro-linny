@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  max-width: 80%;
+  max-width: 85%;
 
   &_header {
     text-align: center;
@@ -22,6 +22,9 @@
   justify-content: space-between;
   margin-top: 20px;
   align-items: stretch;
+
+
+
 }
 
 .container {
@@ -34,11 +37,17 @@
   flex: 0 0 calc((100% / 3) - 40px);
 
   &_header {
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
   }
 }
 
+.container_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
 .notes {
   border: 1px dotted #486444;
   border-radius: 20px;
@@ -49,13 +58,13 @@
 
 .list {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
 .plant {
-  font-size: 17px;
+  font-size: 14px;
 }
 
 .row {
@@ -70,3 +79,4 @@
     gap: 20px;
     
 }
+

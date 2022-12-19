@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import usePlants from '../providers/Plants';
+import { Link } from 'react-router-dom';
 import styles from './PlantDetalisContainer.module.scss';
 
 export default function PlantDeleteContainer() {
@@ -60,7 +61,7 @@ export default function PlantDeleteContainer() {
         <p className={styles.plant}>{photo}</p>
       </div> */}
       <div className={styles.box}>
-      <div className={styles.container_left}>
+      <div className={styles.container_text}>
       <div className={styles.row}>
         <p className={styles.list}>Data nowego liścia</p>
         <p className={styles.plant}>{newLeafDate}</p>
@@ -139,9 +140,11 @@ export default function PlantDeleteContainer() {
       </div>
       </div>
       <div className= {styles.bottom}>
-        {/* <h3 className={styles.container_header}>Aktualnie</h3> */}
-     
       </div>
+
+      <Link className={styles.back} to="/">
+        Powrót do listy roślin
+      </Link>
     </div>
   );
 }
