@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import { useCallback, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import usePlants from '../providers/Plants';
+import usePlants, { phSubstrates, places, wateringMetods, waterings} from '../providers/Plants';
 import styles from './PlantFormContainer.module.scss';
 
 const emptyForm = {
@@ -153,9 +153,9 @@ function PlantFormContainer() {
       <label>Nasłonecznienie</label>
       <select name="place" value={form.place} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">
-          <option value="1">Bezpośrednie słońce</option>
-          <option value="2">Jasne o rozproszonym świetle</option>
-          <option value="3">Cieniste lub półcieniste</option>
+        {places.map((value, key) => (
+            <option value={key}>{value}</option>
+          ))}
         </optgroup>
       </select>
       <label>Temperatura</label>
@@ -175,12 +175,10 @@ function PlantFormContainer() {
       <label>Częstotliwość podlewania</label>
       <select name="watering" value={form.watering} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">
-          <option value="1">
-            Dopiero gdy przeschnie lub kiedy higrometr wskazuje 3
-          </option>
-          <option value="2">
-            Utrzymywanie stale wilgotnego podłoża (higromentr między 4 a 6)
-          </option>
+        {waterings.map((value, key) => (
+            <option value={key}>{value}</option>
+          ))}
+
         </optgroup>
       </select>
       <label>Sposób podlewania</label>
@@ -190,20 +188,17 @@ function PlantFormContainer() {
         onChange={onUpdate}
       >
         <optgroup label="Opcje wyboru">
-          <option value="1">Równomiernie na całej powierzchni</option>
-          <option value="2">Umieszczenie doniczki w naczyniu z wodą</option>
-          <option value="3">Dolewanie wody do podstawki</option>
+        {wateringMetods.map((value, key) => (
+            <option value={key}>{value}</option>
+          ))}
         </optgroup>
       </select>
       <label>pH podłoża</label>
       <select name="phSubstrate" value={form.phSubstrate} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">
-          <option value="1">Bardzo kwaśny (poniżej 4,5)</option>
-          <option value="2">Kwaśny (4,5 - 5,5)</option>
-          <option value="3">Lekko kwaśny (5,6 - 6,5)</option>
-          <option value="4">Obojętny (6,6 - 7,2)</option>
-          <option value="5">Zasadowy (powyżej 7,3)</option>
-          <option value="6">Nie wiem (do sprawdzenia)</option>
+          {phSubstrates.map((value, key) => (
+            <option value={key}>{value}</option>
+          ))}
         </optgroup>
       </select>
       <label>Doświetlanie</label>

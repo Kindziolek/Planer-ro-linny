@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import usePlants from '../providers/Plants';
+import usePlants, { phSubstrates, places, wateringMetods, waterings } from '../providers/Plants';
 import { Link } from 'react-router-dom';
 import styles from './PlantDetalisContainer.module.scss';
 
@@ -95,7 +95,7 @@ export default function PlantDeleteContainer() {
         </div>
         <div className={styles.row}>
           <p className={styles.list}>Nasłonecznienie</p>
-          <p className={styles.plant}>{place}</p>
+          <p className={styles.plant}>{places[place]}</p>
         </div>
         <div className={styles.row}>
           <p className={styles.list}>Wilgotność powietrza</p>
@@ -103,7 +103,7 @@ export default function PlantDeleteContainer() {
         </div>
         <div className={styles.row}>
           <p className={styles.list}>pH podłoża</p>
-          <p className={styles.plant}>{phSubstrate}</p>
+          <p className={styles.plant}>{phSubstrates[phSubstrate]}</p>
         </div>
         </div>
       </div>  
@@ -112,11 +112,11 @@ export default function PlantDeleteContainer() {
     <h3 className={styles.container_header}>Jak o mnie dbać:</h3>
       <div className={styles.row}>
         <p className={styles.list}>Metoda podlewania</p>
-        <p className={styles.plant}>{wateringMetod}</p>
+        <p className={styles.plant}>{wateringMetods[wateringMetod]}</p>
       </div>
       <div className={styles.row}>
         <p className={styles.list}>Częstotliwość podelwania</p>
-        <p className={styles.plant}>{watering}</p>
+        <p className={styles.plant}>{waterings[watering]}</p>
       </div>
 
       <div className={styles.row}>
