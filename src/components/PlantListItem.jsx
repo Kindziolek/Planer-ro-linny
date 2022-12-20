@@ -8,8 +8,8 @@ function PlantListItem({ id, name, photo }) {
       <div className={styles.list_item}>
         <img className={styles.photo} src={photo} />
         <div className={styles.options}>
-          <Link to={`/edit/${id}`}>edycja</Link>
-          <Link to={`/del/${id}`}>usuń</Link>
+          <Link to={`/edit/${id}`}>Edycja</Link>
+          <Link to={`/del/${id}`}>Usuń</Link>
         </div>
       </div>
     </div>

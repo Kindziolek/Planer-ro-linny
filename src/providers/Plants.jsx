@@ -66,7 +66,13 @@ const wateringMetods = [
 const waterings = [
   'Dopiero gdy przeschnie lub kiedy higrometr wskazuje 3',
   'Utrzymywanie stale wilgotnego podłoża (higromentr między 4 a 6)'
-]
+];
+
+const safeOfAnimals = [
+  'Tak',
+  'Nie',
+];
+
 const PlantsProvider = ({ children }) => {
   const [plants, setPlants] = useState(readLocalStorage(localStorageKey));
 
@@ -108,4 +114,4 @@ const PlantsProvider = ({ children }) => {
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };
 
-export { PlantsProvider, phSubstrates, places, wateringMetods, waterings };
+export { PlantsProvider, phSubstrates, places, wateringMetods, waterings, safeOfAnimals };

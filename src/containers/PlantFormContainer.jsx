@@ -7,6 +7,7 @@ import usePlants, {
   places,
   wateringMetods,
   waterings,
+  safeOfAnimals,
 } from '../providers/Plants';
 import styles from './PlantFormContainer.module.scss';
 
@@ -15,7 +16,7 @@ const emptyForm = {
   dateOfPurchase: new Date().toISOString().substring(0, 10),
   placeOfPurchase: '',
   price: 0,
-  safeOfAnimals: false,
+  safeOfAnimal: '1',
   notes: '',
   photo: '',
   substrate: '',
@@ -96,7 +97,7 @@ function PlantFormContainer() {
         value={form.placeOfPurchase}
         onChange={onUpdate}
       />
-      <label>Cena</label>
+      <label>Cena [zł]</label>
       <input
         name="price"
         type="number"
@@ -104,13 +105,13 @@ function PlantFormContainer() {
         onChange={onUpdate}
       />
       <label>Bezpieczne dla zwierząt</label>
-      <input
-        name="safeOfAnimals"
-        type="checkbox"
-        value={true}
-        onChange={onUpdate}
-        checked={form.safeOfAnimals}
-      />
+      <select name="safeOfAnimal" value={form.safeOfAnimal} onChange={onUpdate}>
+        <optgroup label="Opcje wyboru">
+        {safeOfAnimals.map((value, key) => (
+          <option value={key}>{value}</option>
+        ))}
+      </optgroup>
+      </select>
       <label>Notatki</label>
       <textarea name="notes" value={form.notes} onChange={onUpdate} />
       <label>Zdjęcie</label>
@@ -131,7 +132,7 @@ function PlantFormContainer() {
         value={form.sizePot}
         onChange={onUpdate}
       />
-      <label>Wielkość rośliny</label>
+      <label>Wielkość rośliny [cm]</label>
       <input
         name="sizePlant"
         type="number"
@@ -153,14 +154,14 @@ function PlantFormContainer() {
           ))}
         </optgroup>
       </select>
-      <label>Temperatura</label>
+      <label>Temperatura [°C]</label>
       <input
         name="temperature"
         type="number"
         value={form.temperature}
         onChange={onUpdate}
       />
-      <label>Wilgotność potwietrza</label>
+      <label>Wilgotność potwietrza [%]</label>
       <input
         name="airHumidity"
         type="number"

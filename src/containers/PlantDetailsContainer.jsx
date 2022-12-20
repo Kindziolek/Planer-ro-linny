@@ -4,6 +4,7 @@ import usePlants, {
   places,
   wateringMetods,
   waterings,
+  safeOfAnimals,
 } from '../providers/Plants';
 import { Link } from 'react-router-dom';
 import styles from './PlantDetalisContainer.module.scss';
@@ -17,7 +18,7 @@ export default function PlantDeleteContainer() {
     dateOfPurchase,
     placeOfPurchase,
     price,
-    safeOfAnimals,
+    safeOfAnimal,
     notes,
     photo,
     substrate,
@@ -76,7 +77,7 @@ export default function PlantDeleteContainer() {
           </div>
           <div className={styles.row}>
             <p className={styles.list}>Bezpieczne dla zwierząt:</p>
-            <p className={styles.plant}>{safeOfAnimals ? 'Tak' : 'Nie'}</p>
+            <p className={styles.plant}>{safeOfAnimals[safeOfAnimal]}</p>
           </div>
           <div className={styles.row}>
             <p className={styles.list}>Podłoże</p>
