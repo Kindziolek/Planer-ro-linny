@@ -53,7 +53,7 @@ export default function PlantDeleteContainer() {
           </div>
           <div className={styles.row}>
             <p className={styles.list}>Cena</p>
-            <p className={styles.plant}>{price}</p>
+            <p className={styles.plant}>{price}zł</p>
           </div>
         </div>
         <div className={styles.notes}>

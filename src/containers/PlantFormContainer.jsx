@@ -83,7 +83,7 @@ function PlantFormContainer() {
   return (
     <form className={styles.form} onSubmit={onSubmit}>
       <label>Nazwa rośliny</label>
-      <input name="name" value={form.name} onChange={onUpdate} />
+      <input name="name" value={form.name} onChange={onUpdate} required />
       <label>Data zakupu</label>
       <input
         name="dateOfPurchase"
@@ -113,9 +113,9 @@ function PlantFormContainer() {
       </optgroup>
       </select>
       <label>Notatki</label>
-      <textarea name="notes" value={form.notes} onChange={onUpdate} />
+      <textarea name="notes" rows="10" value={form.notes} onChange={onUpdate} className={styles.notes}/>
       <label>Zdjęcie</label>
-      {form.photo && <img src={form.photo} width="100" />}
+      {form.photo && <img src={form.photo} width="50%"/>}
       <input
         name="photo_uri"
         type="file"
@@ -220,7 +220,7 @@ function PlantFormContainer() {
       />
       <label>Moje obserwacje</label>
       <textarea
-        name="observations"
+        name="observations" rows="10"
         placeholder="Możesz w tym miejscu zapisać to, co udało Ci się zaobserwować. Na przykład to, co lubi roślina, a co jej szkodzi."
         value={form.observations}
         onChange={onUpdate}
