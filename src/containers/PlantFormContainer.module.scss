@@ -9,7 +9,28 @@
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+
+     @media (min-width: 768px) {
+      font-size: 20px;
 }
+}
+
+.box {
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 40px;
+  }
+}
+
+.ask {
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: column
+  }
+}
+
 
 .button {
     font-size: 15px;

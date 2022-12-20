@@ -82,38 +82,44 @@ function PlantFormContainer() {
 
   return (
     <form className={styles.form} onSubmit={onSubmit}>
-      <label>Nazwa rośliny</label>
+     <div className={styles.box}>  
+      <div className={styles.ask}>
+       <label>Nazwa rośliny</label>
+  
       <input name="name" value={form.name} onChange={onUpdate} required />
+      </div>
+      <div className={styles.ask}>
       <label>Data zakupu</label>
       <input
         name="dateOfPurchase"
         type="date"
         value={form.dateOfPurchase}
         onChange={onUpdate}
-      />
-      <label>Miejsce zakupu</label>
+      /></div>
+            <div className={styles.ask}>
+       <label>Miejsce zakupu</label>
       <input
         name="placeOfPurchase"
         value={form.placeOfPurchase}
         onChange={onUpdate}
-      />
+      /></div>
+          <div className={styles.ask}>
       <label>Cena [zł]</label>
       <input
         name="price"
         type="number"
         value={form.price}
         onChange={onUpdate}
-      />
-      <label>Bezpieczne dla zwierząt</label>
-      <select name="safeOfAnimal" value={form.safeOfAnimal} onChange={onUpdate}>
-        <optgroup label="Opcje wyboru">
-        {safeOfAnimals.map((value, key) => (
-          <option value={key}>{value}</option>
-        ))}
-      </optgroup>
-      </select>
+      /></div>
+        </div>
+
+
+        <div className={styles.box}> 
+            <div className={styles.ask}>
       <label>Notatki</label>
       <textarea name="notes" rows="10" value={form.notes} onChange={onUpdate} className={styles.notes}/>
+      </div>
+      <div className={styles.ask}>
       <label>Zdjęcie</label>
       {form.photo && <img src={form.photo} width="50%"/>}
       <input
@@ -123,29 +129,54 @@ function PlantFormContainer() {
         onChange={onUpdate}
         ref={fileRef}
       />
-      <label>Podłoże</label>
-      <input name="substrate" value={form.substrate} onChange={onUpdate} />
+      </div>
+      <div className={styles.ask}> 
+      <div className={styles.ask}>
       <label>Rozmiar doniczki</label>
       <input
         name="sizePot"
         type="number"
         value={form.sizePot}
         onChange={onUpdate}
-      />
+      /> </div>
+
+      <div className={styles.ask}>
       <label>Wielkość rośliny [cm]</label>
       <input
         name="sizePlant"
         type="number"
         value={form.sizePlant}
         onChange={onUpdate}
-      />
+      /> </div>
+            <div className={styles.ask}>
+      <label>Podłoże</label>
+      <input name="substrate" value={form.substrate} onChange={onUpdate} />
+      </div>
+      </div>
+      
+</div>
+      <div className={styles.ask}>
+      <label>Bezpieczne dla zwierząt</label>
+      <select name="safeOfAnimal" value={form.safeOfAnimal} onChange={onUpdate}>
+        <optgroup label="Opcje wyboru">
+        {safeOfAnimals.map((value, key) => (
+          <option value={key}>{value}</option>
+        ))}
+      </optgroup>
+      </select>
+      </div>
+  
+
+
+      
+      <div className={styles.ask}>
       <label>Data nowego liścia</label>
       <input
         name="newLeafDate"
         type="date"
         value={form.newLeafDate}
         onChange={onUpdate}
-      />
+      /></div>
       <label>Nasłonecznienie</label>
       <select name="place" value={form.place} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">

@@ -35,4 +35,8 @@ select {
   border-radius: 15px;
   background-color: #24583f32;
   width: 100%;
+
+  @media (min-width: 768px) {
+      font-size: 20px;
+}
 }
