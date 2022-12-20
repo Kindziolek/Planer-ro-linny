@@ -1,3 +1,4 @@
+import styles from './EditIcon.module.scss'
 
 function EditIcon({ id, name, photo }) {
     
@@ -9,4 +10,3 @@ function EditIcon({ id, name, photo }) {
 }
   
   export default EditIcon;
-  

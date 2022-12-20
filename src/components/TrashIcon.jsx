@@ -1,5 +1,7 @@
+import styles from './TrashIcon.module.scss'
 
 function TrashIcon({ id, name, photo }) {
+
   return (
     <svg viewBox="0 0 24 24" width="20" height="20" className={styles.trash}>
       <path

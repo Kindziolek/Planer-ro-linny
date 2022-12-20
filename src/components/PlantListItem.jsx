@@ -1,16 +1,13 @@
 import { Link } from 'react-router-dom';
 import styles from './PlantListItem.module.scss';
-import EditIcon from '/EditIcon';
-
-import TrashIcon from '/TrashIcon';
-
-
+import EditIcon from './EditIcon';
+import TrashIcon from './TrashIcon';
 
 
 const defaultPhoto =
   'https://img.freepik.com/vector-premium/coleccion-ilustraciones-plantas-interior_464940-31.jpg?w=2000';
 
-def;
+
 function PlantListItem({ id, name, photo }) {
   return (
     <div>
