@@ -82,43 +82,113 @@ function PlantFormContainer() {
 
   return (
     <form className={styles.form} onSubmit={onSubmit}>
-     <div className={styles.box}>  
-      <div className={styles.ask}>
-       <label>Nazwa rośliny</label>
-  
-      <input name="name" value={form.name} onChange={onUpdate} required />
-      </div>
-      <div className={styles.ask}>
-      <label>Data zakupu</label>
-      <input
-        name="dateOfPurchase"
-        type="date"
-        value={form.dateOfPurchase}
-        onChange={onUpdate}
-      /></div>
-            <div className={styles.ask}>
-       <label>Miejsce zakupu</label>
-      <input
-        name="placeOfPurchase"
-        value={form.placeOfPurchase}
-        onChange={onUpdate}
-      /></div>
-          <div className={styles.ask}>
-      <label>Cena [zł]</label>
-      <input
-        name="price"
-        type="number"
-        value={form.price}
-        onChange={onUpdate}
-      /></div>
+      <div className={styles.contener}>
+        <div className={styles.ask}>
+          <label>Nazwa rośliny</label>
+
+          <input name="name" value={form.name} onChange={onUpdate} required />
         </div>
-
-
-        <div className={styles.box}> 
-            <div className={styles.ask}>
-      <label>Notatki</label>
-      <textarea name="notes" rows="10" value={form.notes} onChange={onUpdate} className={styles.notes}/>
+        <div className={styles.ask}>
+          <label>Data zakupu</label>
+          <input
+            name="dateOfPurchase"
+            type="date"
+            value={form.dateOfPurchase}
+            onChange={onUpdate}
+          />
+        </div>
+        <div className={styles.ask}>
+          <label>Miejsce zakupu</label>
+          <input
+            name="placeOfPurchase"
+            value={form.placeOfPurchase}
+            onChange={onUpdate}
+          />
+        </div>
+        <div className={styles.ask}>
+          <label>Cena [zł]</label>
+          <input
+            name="price"
+            type="number"
+            value={form.price}
+            onChange={onUpdate}
+          />
+        </div>
       </div>
+
+      <div className={styles.contener}>
+        <div className={styles.box}>
+          <div className={styles.ask}>
+            <label>Notatki</label>
+            <textarea
+              name="notes"
+              value={form.notes}
+              onChange={onUpdate}
+              className={styles.notes}
+            />
+          </div>
+
+
+
+          <div className={styles.ask}>
+            <div className={styles.ask}>
+              <label>Rozmiar doniczki [cm]</label>
+              <input
+                name="sizePot"
+                type="number"
+                value={form.sizePot}
+                onChange={onUpdate}
+              />{' '}
+            </div>
+
+            <div className={styles.ask}>
+              <label>Wielkość rośliny [cm]</label>
+              <input
+                name="sizePlant"
+                type="number"
+                value={form.sizePlant}
+                onChange={onUpdate}
+              />{' '}
+            </div>
+            <div className={styles.ask}>
+              <label>Podłoże</label>
+              <input
+                name="substrate"
+                value={form.substrate}
+                onChange={onUpdate}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div className={styles.ask}>
+        <label>Bezpieczne dla zwierząt</label>
+        <select
+          name="safeOfAnimal"
+          value={form.safeOfAnimal}
+          onChange={onUpdate}
+        >
+          <optgroup label="Opcje wyboru">
+            {safeOfAnimals.map((value, key) => (
+              <option value={key}>{value}</option>
+            ))}
+          </optgroup>
+        </select>
+      </div>
+
+      <div className={styles.ask}>
+        <label>Data nowego liścia</label>
+        <input
+          name="newLeafDate"
+          type="date"
+          value={form.newLeafDate}
+          onChange={onUpdate}
+        />
+      </div>
+
       <div className={styles.ask}>
       <label>Zdjęcie</label>
       {form.photo && <img src={form.photo} width="50%"/>}
@@ -130,53 +200,41 @@ function PlantFormContainer() {
         ref={fileRef}
       />
       </div>
-      <div className={styles.ask}> 
+
+
       <div className={styles.ask}>
-      <label>Rozmiar doniczki</label>
+      <label>Temperatura [°C]</label>
       <input
-        name="sizePot"
+        name="temperature"
         type="number"
-        value={form.sizePot}
-        onChange={onUpdate}
-      /> </div>
-
-      <div className={styles.ask}>
-      <label>Wielkość rośliny [cm]</label>
-      <input
-        name="sizePlant"
-        type="number"
-        value={form.sizePlant}
-        onChange={onUpdate}
-      /> </div>
-            <div className={styles.ask}>
-      <label>Podłoże</label>
-      <input name="substrate" value={form.substrate} onChange={onUpdate} />
-      </div>
-      </div>
-      
-</div>
-      <div className={styles.ask}>
-      <label>Bezpieczne dla zwierząt</label>
-      <select name="safeOfAnimal" value={form.safeOfAnimal} onChange={onUpdate}>
-        <optgroup label="Opcje wyboru">
-        {safeOfAnimals.map((value, key) => (
-          <option value={key}>{value}</option>
-        ))}
-      </optgroup>
-      </select>
-      </div>
-  
-
-
-      
-      <div className={styles.ask}>
-      <label>Data nowego liścia</label>
-      <input
-        name="newLeafDate"
-        type="date"
-        value={form.newLeafDate}
+        value={form.temperature}
         onChange={onUpdate}
       /></div>
+          <div className={styles.ask}>
+      <label>Wilgotność potwietrza [%]</label>
+      <input
+        name="airHumidity"
+        type="number"
+        value={form.airHumidity}
+        onChange={onUpdate}
+      /></div>
+       <div className={styles.ask}>
+      <label>Doświetlanie</label>
+      <input
+        name="lighting"
+        placeholder="Jeśli doświetlasz, możesz podać np. godziny, w których doświetlasz"
+        value={form.lighting}
+        onChange={onUpdate}
+      /></div>
+       <div className={styles.ask}>
+      <label>Sposób rozmnażania</label>
+      <input
+        name="reproduction"
+        value={form.reproduction}
+        onChange={onUpdate}
+      /></div>
+
+<div className={styles.ask}>
       <label>Nasłonecznienie</label>
       <select name="place" value={form.place} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">
@@ -185,20 +243,8 @@ function PlantFormContainer() {
           ))}
         </optgroup>
       </select>
-      <label>Temperatura [°C]</label>
-      <input
-        name="temperature"
-        type="number"
-        value={form.temperature}
-        onChange={onUpdate}
-      />
-      <label>Wilgotność potwietrza [%]</label>
-      <input
-        name="airHumidity"
-        type="number"
-        value={form.airHumidity}
-        onChange={onUpdate}
-      />
+      </div>
+      <div className={styles.ask}>
       <label>Częstotliwość podlewania</label>
       <select name="watering" value={form.watering} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">
@@ -206,7 +252,8 @@ function PlantFormContainer() {
             <option value={key}>{value}</option>
           ))}
         </optgroup>
-      </select>
+      </select></div>
+      <div className={styles.ask}>
       <label>Sposób podlewania</label>
       <select
         name="wateringMetod"
@@ -218,7 +265,8 @@ function PlantFormContainer() {
             <option value={key}>{value}</option>
           ))}
         </optgroup>
-      </select>
+      </select></div>
+      <div className={styles.ask}>
       <label>pH podłoża</label>
       <select name="phSubstrate" value={form.phSubstrate} onChange={onUpdate}>
         <optgroup label="Opcje wyboru">
@@ -227,34 +275,39 @@ function PlantFormContainer() {
           ))}
         </optgroup>
       </select>
+      </div>
+      <div className={styles.ask}>
       <label>Doświetlanie</label>
       <input
         name="lighting"
         placeholder="Jeśli doświetlasz, możesz podać np. godziny, w których doświetlasz"
         value={form.lighting}
         onChange={onUpdate}
-      />
+      /></div>
+       <div className={styles.ask}>
       <label>Sposób rozmnażania</label>
       <input
         name="reproduction"
         value={form.reproduction}
         onChange={onUpdate}
-      />
+      /></div>
+       <div className={styles.ask}>
       <label>Nawóz</label>
-      <input name="fretilizer" value={form.fretilizer} onChange={onUpdate} />
+      <input name="fretilizer" value={form.fretilizer} onChange={onUpdate} /></div> <div className={styles.ask}>
       <label>Data ostatniego nawożenia</label>
       <input
         name="fretilizerDate"
         type="date"
         value={form.fretilizerDate}
         onChange={onUpdate}
-      />
+      /></div> 
       <label>Moje obserwacje</label>
       <textarea
-        name="observations" rows="10"
+        name="observations"
         placeholder="Możesz w tym miejscu zapisać to, co udało Ci się zaobserwować. Na przykład to, co lubi roślina, a co jej szkodzi."
         value={form.observations}
         onChange={onUpdate}
+        className={styles.notes}
       />
 
       <button className={styles.button}>Zapisz</button>

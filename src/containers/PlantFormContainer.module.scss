@@ -9,13 +9,16 @@
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    
 
      @media (min-width: 768px) {
       font-size: 20px;
 }
 }
 
-.box {
+.contener {
+    width: 100%;
+
     @media (min-width: 768px) {
         display: flex;
         flex-direction: row;
@@ -25,12 +28,25 @@
 }
 
 .ask {
+        width: 100%;
+
     @media (min-width: 768px) {
         display: flex;
-        flex-direction: column
+        flex-direction: column;
+
   }
 }
 
+.box {
+    width: 100%;
+    
+    @media (min-width:768px) {
+        display: flex;
+        gap: 40px;
+        margin: 20px 0;
+        
+    }
+}
 
 .button {
     font-size: 15px;
@@ -53,6 +69,13 @@
 }
 
 .notes {
+    
     overflow: auto;
+    height: 100px;
+
+    @media (min-width:768px) {
+       height: 100%;
+
+    }
 }
 
