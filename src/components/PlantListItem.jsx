@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styles from './PlantListItem.module.scss';
+import styles from './test.module.scss';
 import EditIcon from './EditIcon';
 import TrashIcon from './TrashIcon';
 
